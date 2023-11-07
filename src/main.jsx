@@ -8,6 +8,7 @@ import './index.css'
 import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import Home from './components/Home/Home';
+import AddJob from './components/AddJob';
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/add_job",
+        element: <AddJob></AddJob>
       },
     ]
   },
