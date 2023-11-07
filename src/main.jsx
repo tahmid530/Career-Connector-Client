@@ -7,6 +7,7 @@ import {
 import './index.css'
 import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
+import Home from './components/Home/Home';
 
 
 const router = createBrowserRouter([
@@ -14,6 +15,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root/>,
     errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+    ]
   },
 ]);
 
