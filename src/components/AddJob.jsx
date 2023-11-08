@@ -1,10 +1,11 @@
+import Swal from "sweetalert2";
 
 
 const AddJob = () => {
 
     const handleJob = event => {
-        event.preventDefault();
 
+        event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const deadline = form.deadline.value;
@@ -17,6 +18,28 @@ const AddJob = () => {
         const newJobs = { name, deadline, category, salary, description, posting, image }
 
         console.log(newJobs);
+
+        fetch('http://localhost:5000/jobs', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newJobs)
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Products Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+
+                }
+            })
     }
 
     return (
