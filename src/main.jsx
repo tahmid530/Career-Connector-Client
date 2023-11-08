@@ -10,6 +10,7 @@ import ErrorPage from './components/ErrorPage';
 import Home from './components/Home/Home';
 import AddJob from './components/AddJob';
 import AllJobs from './components/AllJobs';
+import Login from './Login';
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       path: "/all_jobs",
       element: <AllJobs></AllJobs>,
       loader: () => fetch ('http://localhost:5000/jobs')
-      }
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
     ]
   },
 ]);
