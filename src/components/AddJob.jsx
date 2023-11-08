@@ -94,10 +94,10 @@ const AddJob = () => {
                         </div>
                         <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
-                                <span className="label-text">Job Posting</span>
+                                <span className="label-text">Job Posting Date</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="posting" placeholder="Job Posting Date" className="input input-bordered w-full" />
+                                <input type="date" name="posting" placeholder="Job Posting Date" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
