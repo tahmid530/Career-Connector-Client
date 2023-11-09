@@ -20,7 +20,7 @@ const UpdateForm = () => {
         const updateJobs = { name, deadline, category, salary, description, posting, image }
         console.log(updateJobs);
 
-        fetch(`http://localhost:5000/my_jobs/${updateData._id}`, {
+        fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs/${updateData._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

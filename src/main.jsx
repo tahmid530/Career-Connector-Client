@@ -39,27 +39,27 @@ const router = createBrowserRouter([
       {
         path: "/all_jobs",
         element: <PrivateRoute><AllJobs></AllJobs></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/jobs')
+        loader: () => fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/jobs')
       },
       {
         path: "/my_jobs",
         element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/my_jobs')
+        loader: () => fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs')
       },
       {
         path: "/my_jobs/:id",
         element: <UpdateForm></UpdateForm>,
-        loader: ({ params }) => fetch(`http://localhost:5000/my_jobs/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs/${params.id}`)
       },
       {
         path: "/jobs/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/jobs/${params.id}`)
       },
       {
         path: "/apply",
         element: <Apply></Apply>,
-        loader: () => fetch('http://localhost:5000/jobs')
+        loader: () => fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/jobs')
       },
       {
         path: "/about",

@@ -35,7 +35,7 @@ const Apply = () => {
                 // const modifiedData = { ...jobs };
                 // keysToRemove.forEach(_id => delete modifiedData[_id]);
         
-                fetch('http://localhost:5000/apply', {
+                fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/apply', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
