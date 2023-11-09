@@ -11,12 +11,15 @@ import Home from './components/Home/Home';
 import AddJob from './components/AddJob';
 import AllJobs from './components/AllJobs';
 import Login from './Login';
+import Register from './Register';
+import AuthProvider from './components/AuthProvider';
+import Blog from './components/Blog';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Root />,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
@@ -28,13 +31,21 @@ const router = createBrowserRouter([
         element: <AddJob></AddJob>
       },
       {
-      path: "/all_jobs",
-      element: <AllJobs></AllJobs>,
-      loader: () => fetch ('http://localhost:5000/jobs')
+        path: "/all_jobs",
+        element: <AllJobs></AllJobs>,
+        loader: () => fetch('http://localhost:5000/jobs')
       },
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       },
     ]
   },
@@ -43,6 +54,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

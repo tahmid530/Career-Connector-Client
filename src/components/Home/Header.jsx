@@ -1,15 +1,38 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider";
 import { Link } from "react-router-dom";
 
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/all_jobs'>All Jobs</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
-        <li><Link to='/add_job'>Add a Job</Link></li>
-        <li><Link to='/applied_jobs'>Applied Jobs</Link></li>
-        <li><Link to='/my_jobs'>My Jobs</Link></li>
+        {user?<>
+            <li><Link to='/all_jobs'>All Jobs</Link></li>
+            <li><Link to='/add_job'>Add a Job</Link></li>
+            <li><Link to='/applied_jobs'>Applied Jobs</Link></li>
+            <li><Link to='/my_jobs'>My Jobs</Link></li>
+            <li><Link onClick={handleLogOut}>Log Out</Link></li>
+        </>
+            : <li><Link to="/login">Login</Link></li>
+        }
+
+        {/* <li><Link to="/">Home</Link> </li>
+        <li> <Link to="/about">About</Link> </li>
+        { user?.email ?  <>
+            <li><Link to="/bookings">My Bookings</Link></li>
+            <li><button onClick={handleLogOut}>Log out</button></li>
+        </> 
+        : <li> <Link to="/login">Login</Link> </li>
+       } */}
     </>
 
 
@@ -33,9 +56,6 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1">
                         {navItems}
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <Link to='/login'><button className="btn btn-outline btn-default">Login</button></Link>
                 </div>
             </div>
         </>
