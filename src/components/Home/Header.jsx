@@ -48,7 +48,7 @@ const Header = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <Link to='/'>
+                    <Link to='/about'>
                         <button className="btn btn-ghost normal-case text-xl text-red-600 font-bold">Career Connector</button>
                     </Link>
                 </div>

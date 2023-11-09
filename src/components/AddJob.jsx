@@ -61,7 +61,7 @@ const AddJob = () => {
                                 <span className="label-text">Application Deadline</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="deadline" placeholder="Application Deadline" className="input input-bordered w-full" />
+                                <input type="date" name="deadline" placeholder="Application Deadline" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>

@@ -22,7 +22,7 @@ const AllJobs = () => {
                                     <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
                                 </div>
                                 <div className="flex justify-center gap-3 pb-5">
-                                    <Link to='/details'><button className="btn btn-outline">Details</button></Link>
+                                    <Link to={`/jobs/${job._id}`}><button className="btn btn-outline">Details</button></Link>
                                 </div>
                             </div>
                         ))

@@ -25,8 +25,7 @@ const Blog = () => {
             <h3 className="text-3xl font-semibold">Q. Explain your code.</h3>
             <br />
             <p className="text-lg">
-                Ans: Access Token: Used for temporary authentication and resource access.
-                Refresh Token: Used to renew the Access Token when it expires. Store Access Token on the client temporarily (e.g., in memory or cookies) and store Refresh Token securely on the server.
+                Ans: Actually it is a large project that is why i can not find where to start the explanation of this code.
             </p>
 
         </div>

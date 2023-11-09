@@ -16,6 +16,10 @@ import AuthProvider from './components/AuthProvider';
 import Blog from './components/Blog';
 import MyJobs from './components/MyJobs';
 import UpdateForm from './components/UpdateForm';
+import Details from './components/Details';
+import Apply from './components/Apply';
+import About from './components/Home/About';
+import PrivateRoute from './components/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -30,22 +34,36 @@ const router = createBrowserRouter([
       },
       {
         path: "/add_job",
-        element: <AddJob></AddJob>
+        element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
       },
       {
         path: "/all_jobs",
-        element: <AllJobs></AllJobs>,
+        element: <PrivateRoute><AllJobs></AllJobs></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/jobs')
       },
       {
         path: "/my_jobs",
-        element: <MyJobs></MyJobs>,
+        element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/my_jobs')
       },
       {
         path: "/my_jobs/:id",
         element: <UpdateForm></UpdateForm>,
         loader: ({ params }) => fetch(`http://localhost:5000/my_jobs/${params.id}`)
+      },
+      {
+        path: "/jobs/:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+      },
+      {
+        path: "/apply",
+        element: <Apply></Apply>,
+        loader: () => fetch('http://localhost:5000/jobs')
+      },
+      {
+        path: "/about",
+        element: <About></About>
       },
       {
         path: "/login",

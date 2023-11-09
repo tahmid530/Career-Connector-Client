@@ -63,7 +63,7 @@ const UpdateForm = () => {
                                 <span className="label-text">Application Deadline</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="deadline" defaultValue={updateData?.deadline} placeholder="Application Deadline" className="input input-bordered w-full" />
+                                <input type="date" name="deadline" defaultValue={updateData?.deadline} placeholder="Application Deadline" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -113,7 +113,7 @@ const UpdateForm = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Add Job" className="btn btn-outline w-full" />
+                    <input type="submit" value="Update Job" className="btn btn-outline w-full" />
                 </form>
             </div>
         </div>
