@@ -14,6 +14,8 @@ import Login from './Login';
 import Register from './Register';
 import AuthProvider from './components/AuthProvider';
 import Blog from './components/Blog';
+import MyJobs from './components/MyJobs';
+import UpdateForm from './components/UpdateForm';
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,16 @@ const router = createBrowserRouter([
         path: "/all_jobs",
         element: <AllJobs></AllJobs>,
         loader: () => fetch('http://localhost:5000/jobs')
+      },
+      {
+        path: "/my_jobs",
+        element: <MyJobs></MyJobs>,
+        loader: () => fetch('http://localhost:5000/my_jobs')
+      },
+      {
+        path: "/my_jobs/:id",
+        element: <UpdateForm></UpdateForm>,
+        loader: ({ params }) => fetch(`http://localhost:5000/my_jobs/${params.id}`)
       },
       {
         path: "/login",

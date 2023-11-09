@@ -7,7 +7,7 @@ const ReactTab = () => {
         <div className='my-10'>
             <Tabs>
                 <TabList>
-                    <Tab>Title 1</Tab>
+                    <Tab>All Jobs</Tab>
                     <Tab>Title 2</Tab>
                     <Tab>Title 3</Tab>
                     <Tab>Title 4</Tab>
