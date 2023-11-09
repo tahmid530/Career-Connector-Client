@@ -53,7 +53,7 @@ const ReactTab = () => {
                                             <h2 className="card-title text-[#444444]">Job Description: {job.description}</h2>
                                             <h2 className="card-title text-[#444444]">Job Posting Date: {job.posting}</h2>
                                             <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
-                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: ${job.salary}</h3>
+                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {job.salary}</h3>
                                         </div>
                                         <div className="flex justify-center gap-3 pb-5">
                                             <Link to={`/jobs/${job._id}`}><button className="btn btn-outline">Details</button></Link>
@@ -81,7 +81,7 @@ const ReactTab = () => {
                                             <h2 className="card-title text-[#444444]">Job Description: {job.description}</h2>
                                             <h2 className="card-title text-[#444444]">Job Posting Date: {job.posting}</h2>
                                             <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
-                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: ${job.salary}</h3>
+                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {job.salary}</h3>
                                         </div>
                                         <div className="flex justify-center gap-3 pb-5">
                                             <Link to={`/jobs/${job._id}`}><button className="btn btn-outline">Details</button></Link>
@@ -109,7 +109,7 @@ const ReactTab = () => {
                                             <h2 className="card-title text-[#444444]">Job Description: {job.description}</h2>
                                             <h2 className="card-title text-[#444444]">Job Posting Date: {job.posting}</h2>
                                             <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
-                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: ${job.salary}</h3>
+                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {job.salary}</h3>
                                         </div>
                                         <div className="flex justify-center gap-3 pb-5">
                                             <Link to={`/jobs/${job._id}`}><button className="btn btn-outline">Details</button></Link>
@@ -137,7 +137,7 @@ const ReactTab = () => {
                                             <h2 className="card-title text-[#444444]">Job Description: {job.description}</h2>
                                             <h2 className="card-title text-[#444444]">Job Posting Date: {job.posting}</h2>
                                             <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
-                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: ${job.salary}</h3>
+                                            <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {job.salary}</h3>
                                         </div>
                                         <div className="flex justify-center gap-3 pb-5">
                                             <Link to={`/jobs/${job._id}`}><button className="btn btn-outline">Details</button></Link>

@@ -22,7 +22,7 @@ const Details = () => {
                                 <img src={jobs.image} alt="" className="rounded-xl w-[320px] mx-auto mt-10" />
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title text-[#444444] text-2xl font-bold">{jobs.name}</h2>
-                                    <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: ${jobs.salary}</h3>
+                                    <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {jobs.salary}</h3>
                                     <h2 className="card-title text-[#444444]">Jobs Posting Date: {jobs.posting}</h2>
                                     <h2 className="card-title text-[#444444]">Application Deadline: {jobs.deadline}</h2>
                                 </div>
