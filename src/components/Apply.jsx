@@ -1,102 +1,33 @@
 import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
 
 
 const Apply = () => {
-    const jobs = useLoaderData();
-
-    const handleApply = event => {
-
-        event.preventDefault();
-        const form = event.target;
-
-        const name = form.name.value;
-        const email = form.email.value;
-        const resume = form.resume.value;
-
-        const applyJobs = { name, email, resume }
-        console.log(applyJobs);
-
-        
-            // if (applyJobs.constructor === Object) {
-            //     Swal.fire({
-            //         title: 'Success!',
-            //         text: 'Job Applied Successfully',
-            //         icon: 'success',
-            //         confirmButtonText: 'Cool'
-            //     })
-            // }
-        }
-
-        const handleApplied = jobs => {
-                console.log(jobs);
-        
-                // const keysToRemove = ['_id'];
-                // const modifiedData = { ...jobs };
-                // keysToRemove.forEach(_id => delete modifiedData[_id]);
-        
-                fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/apply', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(jobs)
-                })
-        
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.insertedId) {
-                            Swal.fire({
-                                title: 'Success!',
-                                text: 'Job Applied Successfully',
-                                icon: 'success',
-                                confirmButtonText: 'Cool'
-                            })
-                        }
-                    })
-            }
-        
-    
+    const apply = useLoaderData();
 
     return (
-        <div className="my-8 ">
-            <div className="bg-[#F4F3F0] px-24 py-12 my-5">
-                <h2 className="text-3xl font-extrabold mb-8">Apply Job</h2>
+        <div className="flex flex-col-reverse lg:flex-row gap-6 lg:justify-evenly pb-10 lg:my-20">
 
-                <form onSubmit={handleApply}>
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="name" placeholder="Your Name" className="input input-bordered w-full" />
-                            </label>
+            <div className="card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-20 px-6">
+                {
+                    apply.map(job => (
+
+                        <div key={job._id} className="card w-full lg:w-96 border-2 border-black shadow-md mx-auto lg:mx-0">
+                            <img src={job.image} alt="" className="rounded-xl w-[320px] mx-auto mt-10" />
+                            <div className="card-body items-center text-center">
+
+                                <h2 className="card-title text-[#444444] text-2xl font-bold">{job.name}</h2>
+                                <h2 className="card-title text-[#444444]">Job Category: {job.category}</h2>
+                                <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {job.salary}</h3>
+                                <h2 className="card-title text-[#444444]">Job Description: {job.description}</h2>
+                                <h2 className="card-title text-[#444444]">Job Posting Date: {job.posting}</h2>
+                                <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
+                            </div>
                         </div>
-                        <div className="form-control md:w-1/2 md:ml-4">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="email" name="email" placeholder="Your Email" className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                    </div>
-                    <div className="mb-8">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">Resume</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="resume" placeholder="Your Resume Link" className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                    </div>
-                    <input type="submit" value="Apply Job" onClick={() => handleApplied(jobs)} className="btn btn-outline w-full" />
-                </form>
-            </div >
-        </div>
+                    ))
+                }
+
+            </div>
+        </div >
     );
 };
 

@@ -11,7 +11,7 @@ const Contact = () => {
                     </div>
                     <div className="space-y-6 p-4 md:p-6">
                         <p className="text-2xl font-medium">We are always here to assist you with any questions or concerns. You can reach out to us through the following means:</p>
-                        <p className="text-xl font-semibold">📧 Email: partyperfectionists111@gmail.com</p>
+                        <p className="text-xl font-semibold">📧 Email: careerconnector111@gmail.com</p>
                         <p className="text-xl font-semibold">📞 Phone: +1 800 889 9898</p>
                         <div className="flex items-center gap-4">
                             <h3 className="text-xl font-semibold">Social: </h3>

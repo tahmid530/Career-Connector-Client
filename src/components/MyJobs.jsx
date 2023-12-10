@@ -23,7 +23,7 @@ const AllJobs = () => {
                 if (result.isConfirmed) {
 
 
-                    fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs/${_id}`, {
+                    fetch(`https://assignment-11-server-smoky-one.vercel.app/my_jobs/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -32,7 +32,7 @@ const AllJobs = () => {
                             if (data.deletedCount > 0) {
                                 Swal.fire(
                                     'Deleted!',
-                                    'Your Product has been deleted.',
+                                    'Your Job has been deleted.',
                                     'success'
                                 )
                                 const remainingData = updates.filter(job => job._id !== _id);
@@ -61,7 +61,7 @@ const AllJobs = () => {
                                     <h2 className="card-title text-[#444444]">Job Description: {job.description}</h2>
                                     <h2 className="card-title text-[#444444]">Job Posting Date: {job.posting}</h2>
                                     <h2 className="card-title text-[#444444]">Application Deadline: {job.deadline}</h2>
-                                    <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: ${job.salary}</h3>
+                                    <h3 className="text-[#FF3811] text-xl font-semibold">Salary Range: {job.salary}</h3>
                                 </div>
                                 <div className="flex justify-center gap-3 pb-5">
                                     <button className="btn btn-outline" onClick={() => handleDelete(job._id)}>Delete</button>

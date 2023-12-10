@@ -7,6 +7,7 @@ const AddJob = () => {
 
         event.preventDefault();
         const form = event.target;
+        
         const name = form.name.value;
         const deadline = form.deadline.value;
         const category = form.category.value;
@@ -19,7 +20,7 @@ const AddJob = () => {
 
         console.log(newJobs);
 
-        fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs', {
+        fetch('https://assignment-11-server-smoky-one.vercel.app/my_jobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

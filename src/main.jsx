@@ -39,27 +39,27 @@ const router = createBrowserRouter([
       {
         path: "/all_jobs",
         element: <PrivateRoute><AllJobs></AllJobs></PrivateRoute>,
-        loader: () => fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/jobs')
+        loader: () => fetch('https://assignment-11-server-smoky-one.vercel.app/jobs')
       },
       {
         path: "/my_jobs",
         element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>,
-        loader: () => fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs')
+        loader: () => fetch('https://assignment-11-server-smoky-one.vercel.app/my_jobs')
       },
       {
         path: "/my_jobs/:id",
         element: <UpdateForm></UpdateForm>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-smoky-one.vercel.app/my_jobs/${params.id}`)
       },
       {
         path: "/jobs/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/jobs/${params.id}`)
+        loader: () => fetch('https://assignment-11-server-smoky-one.vercel.app/jobs')
       },
       {
-        path: "/apply",
+        path: "/applied_jobs",
         element: <Apply></Apply>,
-        loader: () => fetch('https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/jobs')
+        loader: () => fetch('https://assignment-11-server-smoky-one.vercel.app/apply')
       },
       {
         path: "/about",

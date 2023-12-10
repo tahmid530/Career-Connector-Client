@@ -20,7 +20,7 @@ const UpdateForm = () => {
         const updateJobs = { name, deadline, category, salary, description, posting, image }
         console.log(updateJobs);
 
-        fetch(`https://assignment-11-server-fem6qw98y-tahmid530.vercel.app/my_jobs/${updateData._id}`, {
+        fetch(`https://assignment-11-server-smoky-one.vercel.app/my_jobs/${updateData._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const UpdateForm = () => {
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Products Updated Successfully',
+                        text: 'Job Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
